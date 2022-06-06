@@ -1,0 +1,65 @@
+{
+  "name": "troedr",
+  "version": "1.0.0",
+  "description": "A Moleculer-based microservices trading toolkit",
+  "scripts": {
+    "dev": "NODE_ENV=test moleculer-runner --repl --hot services/**/*.service.js ",
+    "dev-prod": "NODE_ENV=production moleculer-runner --repl --hot services/**/*.service.js ",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "jest": "^27.1.0",
+    "jest-cli": "^27.1.0",
+    "moleculer-repl": "^0.6.6",
+    "node-pre-gyp": "0.12.0"
+  },
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.24.0",
+    "@influxdata/influxdb-client-apis": "^1.24.0",
+    "@moleculer/lab": "^0.6.2",
+    "ccxt": "^1.79.63",
+    "delay": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "is-online": "^9.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "moleculer": "^0.14.16",
+    "moleculer-cron": "0.0.2",
+    "moleculer-db": "^0.8.15",
+    "moleculer-db-adapter-mongo": "^0.4.13",
+    "moleculer-schedule": "^0.2.3",
+    "moleculer-web": "^0.10.2",
+    "mongojs": "^3.1.0",
+    "nats": "^2.2.0",
+    "nedb": "^1.8.0",
+    "node-binance-api": "^0.13.1",
+    "tardis-dev": "^13.1.14",
+    "technicalindicators": "^3.1.0",
+    "telebot": "^1.4.1",
+    "ws": "^8.5.0"
+  },
+  "engines": {
+    "node": ">= 12.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
